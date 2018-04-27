@@ -52,6 +52,15 @@ app.use(express.static(__dirname + '/public'))
    app.listen(port, function() {
      console.log("app running")
    })
+
+   app.get('/search', function(req, res) {
+    res.sendFile(path.join(__dirname, '/client/build/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+  })
+
 app.get('/login', function(req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
