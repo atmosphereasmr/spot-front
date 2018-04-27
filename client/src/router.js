@@ -6,7 +6,7 @@ import Search from './Components/Search/search.js'
 
 export default (
   <Switch>
-    <IndexRedirect to="/search/:access" />
-    <Route component={Search} path="/search/:access" exact/>
+    <Route exact path="/" component={() => <Redirect to="/home:access" />}/>
+    <Route path="/home:access" component={Search} />
   </Switch>
 )
