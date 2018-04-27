@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, IndexRedirect } from 'react-router-dom';
+import { Route, Switch, IndexRedirect, Redirect } from 'react-router-dom';
 
 import Home from './Components/Home/home.js'
 import Search from './Components/Search/search.js'
