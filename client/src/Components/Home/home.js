@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import './home.css'
+import axios from 'axios'
 
 export default class Home extends Component {
 
     componentDidMount() {
         const login = document.getElementById('login')
         login.style = "width: 200px;"
+    }
+
+    login() {
+        axios.get("http://localhost:8888/login", {withCredentials: true})
     }
 
     render() {
@@ -20,11 +25,11 @@ export default class Home extends Component {
                         <div className="spotlightify-subtitle">
                             <div>By Logan Smith</div>
                         </div>
-                        <Link to="/search">
-                        <div className="log-in-button" id="login">
+         
+   
+                        <div className="log-in-button" id="login" onClick={() => this.login()}>
                             <div>Login with Spotify</div>
                         </div>
-                        </Link>
                     </div>
                     <div className="animation-container">
                         <div className="row-1">
